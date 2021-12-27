@@ -31,7 +31,7 @@ const  App = () => {
           }}
         >
           <Form>
-            <Field name = "search" />
+            <Field name = "search" className="buscador" />
           </Form>
         </Formik>
       </header>
