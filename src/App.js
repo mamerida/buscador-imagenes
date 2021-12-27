@@ -5,6 +5,9 @@ import './header.css'
 const  App = () => {
   //para poder guardar las ftos traidas por la API uso useState para poder persistir las imagenes 
   const [photos,setPhotos] = useState([])
+  const open = (url) =>{
+    window.open(url)
+  }
   console.log({photos})
   return (
     <div>
@@ -30,6 +33,17 @@ const  App = () => {
           </Form>
         </Formik>
       </header>
+      {/* vamos a mostrar las fotos buscadas por el usuario */}
+      <div className='container'>
+          <div className='center'>
+          {photos.map(photo => 
+              <article key={photo.id} onClick={() => open(photo.links.html)}>
+                <img src={photo.urls.regular}/>
+                <p>{[photo.description, photo.alt_description].join(" - ")}</p>
+              </article>
+            )}
+          </div>
+      </div>
     </div>
   );
 }
