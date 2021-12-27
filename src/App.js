@@ -1,6 +1,8 @@
 import {Formik , Form, Field} from 'formik';
 import { useState } from 'react';
 import './header.css'
+import './content.css'
+import './article.css'
 
 const  App = () => {
   //para poder guardar las ftos traidas por la API uso useState para poder persistir las imagenes 
