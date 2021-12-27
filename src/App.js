@@ -1,22 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import {Formik , Form, Field} from 'formik';
+import './header.css'
 
-function App() {
+const  App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <header>
+        {/* dentro de submit creo una funcion async por que voy a estar llamando a la api de imagenes  */}
+        <Formik
+          initialValues={{search:""}}
+          onSubmit={ async values =>{
+              //llamar API de unsplash
+              console.log(values)
+          }}
         >
-          Learn React
-        </a>
+          <Form>
+            <Field name = "search" />
+          </Form>
+        </Formik>
       </header>
     </div>
   );

@@ -1,0 +1,29 @@
+html{
+    box-sizing: content-box;
+}
+ /* selecciono todos los elementos hijos del html y les hago heredar las propiedades del padre con  inherit */
+html *{
+    box-sizing: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding:22px;
+    /* decha abajo blur color  */
+    box-shadow: 1px 2px  5px  rgb(0,0,0,0.3); 
+    /* se agregan estos elementos para darle prioridad al box-shadow y que este no desaparezca */
+    z-index: 2;
+    position: relative;
+}
+
+
+header input{
+    outline: none;
+    border:solid 1px #eee;
+    /* padding vertical horizontal */
+    padding: 10px  5px ;
+    border-radius: 4px;
+}
+
